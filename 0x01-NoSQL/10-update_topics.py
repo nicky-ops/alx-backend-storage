@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""
-Using pymongo to modify documents
-"""
+""" MongoDB Operations with Python using pymongo """
 
 
 def update_topics(mongo_collection, name, topics):
-    """
-    This function changes all topics of a school docoument based on the name
-    """
-    mongo_collection.update_many({"name": name}, {$set:{"topic": topics}})
+    """ Changes all topics of a school document based on the name """
+    query = {"name": name}
+    new_values = {"$set": {"topics": topics}}
+
+    mongo_collection.update_many(query, new_values)
