@@ -24,7 +24,7 @@ class Cache:
         this method takes a data argument and returns a string
         stores input data in redis using a random key
         '''
-        unique_key = uuid.uuid4()
+        unique_key = str(uuid.uuid4())
         self._redis.set(unique_key, data)
         return unique_key
         return data
