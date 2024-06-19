@@ -27,3 +27,4 @@ class Cache:
         unique_key = uuid.uuid4()
         self._redis.set(unique_key, data)
         return unique_key
+        return data
